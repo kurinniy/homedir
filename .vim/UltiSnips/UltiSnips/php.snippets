@@ -1,8 +1,8 @@
 ## Snippets from SnipMate, taken from
 ## https://github.com/scrooloose/snipmate-snippets.git
 
-snippet array "array"
-$${1:arrayName} = array('${2}' => ${3});${4}
+snippet ar "array"
+$${1:arrayName} = array($2);${3}
 endsnippet
 
 snippet class "class"
@@ -70,14 +70,20 @@ for ($${2:i} = 0; $$2 < ${1:count}; $$2${3:++}) {
 endsnippet
 
 snippet foreach "foreach"
-foreach ($${1:variable} as $${2:key} => $${3:value}) {
-	${4:// code...}
+foreach ($1 as $$2) {
+	$3
 }
 endsnippet
 
-snippet if "if"
+snippet if
 if (${1:/* condition */}) {
 	${2:// code...}
+}
+endsnippet
+
+snippet ife
+if (!empty($$1)) {
+	$2
 }
 endsnippet
 
@@ -114,17 +120,45 @@ $time_start = microtime(true);
 endsnippet
 
 snippet sql
-$sql = "${1:Select $2 from} ".$${3:itpDB}->prefix('$4')." ${5:Where $6}"$7;
+$sql = "${1:Select $2 from} ".$${3:itpDB}->prefix('$4')." $5${6:Where $7}"$8;
+endsnippet
+
+snippet gs
+$$1 = $${2:itpDB}->getArrays("Select $3 from ".$$2->prefix('$4')${5:." Where $6"}$7);
+endsnippet
+
+snippet ga
+$$1 = $${2:itpDB}->getArray("Select $3 from ".$$2->prefix('$4')${5:." Where $6"}$7);
+endsnippet
+
+snippet gv
+$$1 = $${2:itpDB}->getValue("Select $3 from ".$$2->prefix('$4')${5:." Where $6"}$7);
 endsnippet
 
 snippet res
 $res = $${1:itpDB}->queryF("$2 ".$$1->prefix('$3')${4:." $5"});
 endsnippet
+snippet qf
+$${1:itpDB}->queryF("$2 ".$$1->prefix('$3')${4:." $5"});
+endsnippet
+#$res = $${1:itpDB}->queryF(${2:" "$2 ".$$1->prefix('$3')${4:." $5"});
+#document.getElement${1/(T)|.*/(?1:s)/}By${1:T}${1/(T)|(I)|.*/(?1:agName)(?2:d)/}('$2')
 
 snippet ex
 exit;
 endsnippet
 
+snippet round
+$$1 = round(${2:($3$$1)}, ${4:2});
+endsnippet
+
+snippet q
+$$1 = $2;
+endsnippet
+
+snippet ??
+$$1 = ($2) ? $3 : $4;
+endsnippet
 
 # :vim:ft=snippets:
 #
