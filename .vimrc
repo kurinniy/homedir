@@ -25,6 +25,7 @@ imap {<CR> {<CR>}<Esc>O
 imap ( ()<LEFT>
 imap [ []<LEFT>
 " Use CTRL-S for saving, also in Insert mode
+"	test comment
 noremap <F2> :update<CR>
 vnoremap <F2> <C-C>:update<CR>
 inoremap <F2> <C-O>:update<CR>
