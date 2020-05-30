@@ -14,7 +14,7 @@ filetype plugin indent on
 " show cursor position
 set ruler
 
-" show status line
+" show status line - test
 set laststatus=2
 
 " use wildmenu
